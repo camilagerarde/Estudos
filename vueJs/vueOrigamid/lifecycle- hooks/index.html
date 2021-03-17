@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Created</title>
+  </head>
+  <body>
+    <!-- 
+    CREATED
+      O beforeCreate é o primeiro método ativado, ele é ativado antes mesmo das propriedades de data 
+      se tornarem reativas. 
+      Já no created, é possível ter acesso aos dados reativos.
+      created é o Hook ideal para iniciarmos requisições fetch. 
+
+    MOUNTED
+      O beforeMount acontece após o created. Em seguida o hook mounted acontece, 
+      durante essa fase o virtual dom é criado e podemos ter acesso ao this.$el.
+      Ideal para quando queremos modificar o DOM ou adicionar eventos globais (scroll, keyup e outros).
+    
+    UPDATED
+      O beforeUpdate acontece sempre que houver uma mudança em um dado reativo. 
+      Em seguida o hook updated acontece, este após o dom ser modificado.
+
+    DESTROYED
+      O beforeDestroy acontece antes do componente ser destruído. 
+      Em seguida o hook destroyed acontece, este após o componente ser destruído.
+      É utilizado quando dividimos a interface em componentes, como veremos mais adiante.
+    -->
+    <div id="app">
+      <p>{{api.login}}</p>
+      <p>{{message}}</p>
+      <button @click="count++">{{count}}</button>
+      <button @click="destroyed">Destruir</button>
+    </div> 
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          message: 'Uma mensagem.',
+          api: {},
+          count: 0,
+        },
+        methods: {
+          getApi() {
+            fetch('https://api.github.com/users/origamid')
+              .then(r => r.json())
+              .then(r => {
+                this.api = r;
+              });
+          },
+          destroyed() {
+            this.$destroy();
+          }
+        },
+        beforeCreate() {
+          console.log('Antes de criar ', this.message);
+          // undefined
+        },
+        created() {
+          console.log('Criação feita ', this.message);
+          this.getApi();
+          // 'Uma mensagem.'
+        },
+        beforeMount() {
+          console.log('Template ainda não renderizado', this.$el);
+        },
+        mounted() {
+          console.log('Template renderizado', this.$el);
+        },
+        beforeUpdate() {
+          console.log('beforeUpdate', this.count);
+        },
+        updated() {
+          console.log('updated', this.count);
+        },
+        beforeDestroy() {
+          console.log('Vai destruir');
+        },
+        destroyed() {
+          console.log('Destruiu');
+        }
+      });
+    </script>
+  </body>
+</html>

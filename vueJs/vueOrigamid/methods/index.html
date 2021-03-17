@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Methods</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{total}}</p>
+      <button @click="increase">Aumentar</button>
+      <button @click="decrease">Diminuir</button>
+      <p>{{instrument}}</p>
+      <button @click="changeInstrument('Violão')">Violão</button>
+      <button @click="changeInstrument('Guitarra')">Guitarra</button>
+      <p>{{info}}</p>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          total: 0,
+          instrument: '',
+          info: '',
+        },
+        methods: {
+          increase() {
+            this.total++
+            this.showInfo()
+          },
+          decrease() {
+            this.total--
+            this.showInfo()
+          },
+          changeInstrument(instrument) {
+            this.instrument = instrument
+            this.showInfo()
+          },
+          showInfo(text) {
+            this.info = 'Você clicou no botão'
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
