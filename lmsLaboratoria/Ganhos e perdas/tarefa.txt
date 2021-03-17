@@ -1,0 +1,4 @@
+Ganhos e perdas
+Crie uma página que peça entradas, saídas e o % de impostos,
+e calcule o ganho depois de impostos.
+Deve imprimir o resultado no site com o símbolo $ na frente.

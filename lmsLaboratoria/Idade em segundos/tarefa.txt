@@ -1,0 +1,3 @@
+Idade em segundos
+Crie um site que peça ao usuário a idade dele em anos, utilizando prompt(),
+e devolva a idade em segundos, utilizando document.write().
