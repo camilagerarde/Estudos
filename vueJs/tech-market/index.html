@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <script src="./vue.js"></script>
+    <title>Tech Market</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <figure class="header__figure">
+          <img class="header__logo" src="./assets/logo.svg" alt="Techno">
+        </figure>
+        <div class="header__bag" @click="bagActive = true">
+          {{totalBag | forPrice}} | {{bag.length}}
+        </div>
+      </header>
+      <main class="products">
+        <div class="products__items" v-for="product in products" :key="product.id" @click="openModal(product.id)">
+          <img class="products__img" :src="product.img" :alt="product.name">
+          <div class="products__info">
+            <span class="products__price">{{product.price | forPrice}}</span>
+            <h2 class="products__title">{{product.name}}</h2>
+          </div>
+        </div>
+      </main>
+      <section class="modal modal__product" v-if="product" @click="closeModal">
+        <div class="modal__container">
+          <figure class="modal__figure">
+            <img class="modal__img" :src="product.img" :alt="product.name">
+          </figure>
+          <div class="modal__infos">
+            <button class="modal__close" @click="product = false">X</button>
+            <span class="modal__price">{{product.price | forPrice}}</span>
+            <h2 class="modal__name">{{product.name}}</h2>
+            <p class="modal__description">{{product.description}}</p>
+            <button class="modal__btn" v-if="product.storage" @click="addBag">Adicionar item</button>
+            <button class="modal__btn modal__btn--esgotado" v-else disabled>Produto esgotado</button>
+          </div>
+          <div class="reviews">
+            <h2 class="reviews__title">Avaliações</h2>
+            <ul>
+              <li class="reviews__item" v-for="review in product.reviews">
+                <p class="reviews__message">{{review.message}}</p>
+                <p class="reviews__user">{{review.name}} | {{review.stars}} estrelas.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="modal modalBag" :class="{modalBagActive : bagActive}" @click="closeBag">
+        <div class="modalBag__container">
+          <button class="modal__close" @click="bagActive = false">X</button>
+          <h2 class="modalBag__title">Carrinho</h2>
+          <div v-if="bag.length > 0">
+            <ul class="modalBag__list">
+              <li class="modalBag__item" v-for="(item, index) in bag">
+                <p>{{item.name}}</p>
+                <p class="modalBag__price">{{item.price | forPrice}}</p>
+                <button class="modalBag__remove" @click="removeBag(index)">X</button>
+              </li>
+            </ul>
+            <p class="modalBag__total">{{totalBag | forPrice}}</p>
+            <button class="modalBag__finish">Finalizar compra</button>
+          </div>
+          <p class="modalBag__empty" v-else>O carinho está vazio</p>
+        </div>
+      </section>
+      <div class="alert" :class="{active : alertActive}">
+        <p class="alert__message">{{alertMessage}}</p>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

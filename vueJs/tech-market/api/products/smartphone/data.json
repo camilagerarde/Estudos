@@ -1,0 +1,19 @@
+{
+  "id": "smartphone",
+  "name": "Smartphone",
+  "price": 1299,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "storage": 3,
+  "img": "./api/products/smartphone/smartphone2.jpg",
+  "reviews": [{
+      "name": "Hades",
+      "stars": 5,
+      "message": "Gostei muito do produto, atendeu todas as minhas necessidades."
+    },
+    {
+      "name": "Deméter",
+      "stars": 4,
+      "message": "Gostei, mas o preço poderia ser melhor."
+    }
+  ]
+}

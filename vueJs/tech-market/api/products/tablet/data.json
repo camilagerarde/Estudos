@@ -1,0 +1,19 @@
+{
+  "id": "tablet",
+  "name": "Tablet",
+  "price": 899,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "storage": 5,
+  "img": "./api/products/tablet/tablet2.jpg",
+  "reviews": [{
+      "name": "Zeus",
+      "stars": 5,
+      "message": "Atendeu todas as minhas necessidades."
+    },
+    {
+      "name": "Calipso",
+      "stars": 4,
+      "message": "Gostei, mas o preço poderia ser melhor."
+    }
+  ]
+}
