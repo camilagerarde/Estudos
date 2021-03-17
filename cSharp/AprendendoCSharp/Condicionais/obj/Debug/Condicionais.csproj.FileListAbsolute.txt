@@ -1,0 +1,7 @@
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\Condicionais\bin\Debug\Condicionais.exe.config
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\Condicionais\bin\Debug\Condicionais.exe
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\Condicionais\bin\Debug\Condicionais.pdb
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\Condicionais\obj\Debug\Condicionais.csprojAssemblyReference.cache
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\Condicionais\obj\Debug\Condicionais.csproj.CoreCompileInputs.cache
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\Condicionais\obj\Debug\Condicionais.exe
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\Condicionais\obj\Debug\Condicionais.pdb
