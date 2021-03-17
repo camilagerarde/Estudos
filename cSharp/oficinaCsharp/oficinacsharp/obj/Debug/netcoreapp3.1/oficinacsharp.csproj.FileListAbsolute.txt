@@ -1,0 +1,13 @@
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\bin\Debug\netcoreapp3.1\oficinacsharp.exe
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\bin\Debug\netcoreapp3.1\oficinacsharp.deps.json
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\bin\Debug\netcoreapp3.1\oficinacsharp.runtimeconfig.json
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\bin\Debug\netcoreapp3.1\oficinacsharp.runtimeconfig.dev.json
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\bin\Debug\netcoreapp3.1\oficinacsharp.dll
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\bin\Debug\netcoreapp3.1\oficinacsharp.pdb
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\obj\Debug\netcoreapp3.1\oficinacsharp.csprojAssemblyReference.cache
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\obj\Debug\netcoreapp3.1\oficinacsharp.AssemblyInfoInputs.cache
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\obj\Debug\netcoreapp3.1\oficinacsharp.AssemblyInfo.cs
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\obj\Debug\netcoreapp3.1\oficinacsharp.csproj.CoreCompileInputs.cache
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\obj\Debug\netcoreapp3.1\oficinacsharp.dll
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\obj\Debug\netcoreapp3.1\oficinacsharp.pdb
+C:\Users\camilag\Desktop\Camila\estudo\oficinacsharp\oficinacsharp\obj\Debug\netcoreapp3.1\oficinacsharp.genruntimeconfig.cache
