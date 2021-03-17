@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Exercícios aula - 02/03</title>
+  </head>
+  <body>
+    <!--
+    Utilizando uma API
+    Crie um método que faça o fetch
+    O método deve ser ativado ao clique de um botão
+    Coloque a resposta json do fetch em uma data e
+    mostre 3 valores na interface.
+    -->
+
+    <div id="app">
+      <button @click="getapidata">Ativar</button>
+      <p>Nome: {{api.name}}</p>
+      <p>Clima: {{api.climate}}</p>
+      <p>População: {{api.population}}</p>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          api: {},
+        },
+        methods: {
+          getapidata() {
+            fetch('https://swapi.dev/api/planets/1/')
+              .then((response) => response.json())
+              .then((json) => {
+                this.api = json
+                console.log(json)
+              })
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

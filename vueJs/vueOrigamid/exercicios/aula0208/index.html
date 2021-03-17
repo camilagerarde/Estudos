@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Exercícios aula - 02/08</title>
+  </head>
+  <body>
+    <!--
+    Utilizando a api:
+    https://viacep.com.br/ws/04538133/json/
+    Mostre o cep, logradouro, complemento, bairro, localidade e uf do que for retornado.
+    
+    Use o arquivo json da aula, para listar os cursos e as matérias.
+  -->
+    <div id="app">
+      <button @click="getApi">Ativar CEP</button>
+      <ul>
+        <li v-for="(data, key) in apiCEP">{{key}}: {{data}}</li>
+      </ul>
+      <hr />
+
+      <button @click="getJson">Ativar cursos</button>
+      <div v-for="classes in courses">
+        <a :href="classes.link">{{classes.curso}}</a>
+        <div v-for="(theClass) in classes.aulas">
+          <p>{{theClass.nome}} - {{theClass.tempo}}</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          apiCEP: {},
+          courses: {},
+        },
+        methods: {
+          getApi() {
+            fetch('https://viacep.com.br/ws/04538133/json/')
+              .then((resp) => resp.json())
+              .then((json) => {
+                this.apiCEP = json
+              })
+          },
+          getJson() {
+            fetch('./class.json')
+              .then((resp) => resp.json())
+              .then((json) => {
+                this.courses = json
+              })
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

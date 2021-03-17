@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Exercícios aula - 03/03</title>
+  </head>
+  <body>
+  <!-- 
+  1 - Crie um criador de botões.
+    O usuário poderá definir:
+    font-size,
+    font-family,
+    background,
+    color,
+    border-radius,
+    As escolhas serão feitas em campos de
+    formulário. Cada escolha deverá ser 
+    refletida em um elemento (o botão).
+
+  2 - Crie um formulário com, nome, email, telefone e mensagem.
+    Ao clicar em enviar, as informações preenchidas no formulário
+    devem aparecer abaixo do mesmo. (previna o comportamento padrão do botão enviar)
+    -->
+
+  <div id="app">
+
+    <h3>Crie seu botão</h3>
+    <label for="fontSize">Tamanho da fonte</label>
+    <input id="fontSize" type="text" v-model="btnCustom.fontSize" placeholder="font-size"/> <br>
+    <label for="fontFamily">Fonte de texto</label>
+    <input id="fontFamily" type="text" v-model="btnCustom.fontFamily" placeholder="font-family"/> <br>
+    <label for="background">Cor de fundo</label>
+    <input id="background" type="color" v-model="btnCustom.background" placeholder="background"/> <br>
+    <label for="color">Cor da letra</label>
+    <input id="color" type="color" v-model="btnCustom.color" placeholder="color"/> <br>
+    <label for="borderRadius">Arredondamento</label>
+    <input id="borderRadius" type="text" v-model="btnCustom.borderRadius" placeholder="border-radius"/> <br><br>
+    <a :style="btnCustom" href="">Seu botão</a><br><br>
+
+    <form action="">
+      <label for="name">Nome</label>
+      <input id="name" type="text" v-model="name" placeholder="Seu nome"/><br>
+      <label for="email">Email</label>
+      <input id="email" type="email" v-model.trim="email" placeholder="Seu email"/><br>
+      <label for="phone">Telefone</label>
+      <input id="phone" type="text" v-model.number="phone" placeholder="Seu telefone"/><br>
+      <label for="message">Mensagem</label>
+      <input id="message" type="text" v-model="message" placeholder="Sua mensagem"/><br><br>
+      <button @click.prevent="showInfos">Mostrar dados</button> <br><br>
+    </form>
+    <ul>
+      <li v-for="(value, key) in show">{{key}}: {{value}}</li>
+    </ul>
+    
+  </div>
+  <script>
+    const vm = new Vue ({
+      el: '#app',
+      data: {
+        btnCustom: {
+          width: '100px',
+          height: '40px',
+          fontSize: '18px',
+          fontFamily: '',
+          textAlign: '',
+          background: '',
+          color: '',
+          borderRadius: '0px',
+        },
+        name: '',
+        email: '',
+        phone: 0,
+        message: '',
+        show: {},
+      },
+      methods: {
+        showInfos() {
+          this.show = {
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+            message: this.message, 
+          }
+        }
+      }
+    })
+  </script>
+
+  </body>
+</html>

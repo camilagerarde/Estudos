@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Exercícios aula - 02/04</title>
+  </head>
+  <body>
+    <!--
+      Utilizando API's
+      - Compare valores entre ambas.
+      - Mostre os nomes e o valor na interface.
+      - Mude a cor para verde no nome com
+      maior valor e vermelho a com menor.
+    -->
+    <style>
+      .green {
+        color: green;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+
+    <div id="app">
+      <button @click="getApi">Ativar</button>
+      <p>
+        Nome: <span v-bind:class="planet1.population > planet2.population ? 'green' : 'red'"> {{planet1.name}}</span>
+        - População: {{planet1.population}}
+      </p>
+      <p>
+        Nome: <span v-bind:class="planet2.population > planet1.population ? 'green' : 'red'">{{planet2.name}}</span>
+        - População: {{planet2.population}}
+      </p>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          planet1: {},
+          planet2: {},
+        },
+        methods: {
+          getApi() {
+            this.getApiOne()
+            this.getApiTwo()
+          },
+          getApiOne() {
+            fetch('https://swapi.dev/api/planets/1/')
+              .then((response) => response.json())
+              .then((json) => {
+                this.planet1 = json
+              })
+          },
+          getApiTwo() {
+            fetch('https://swapi.dev/api/planets/2/')
+              .then((response) => response.json())
+              .then((json) => {
+                this.planet2 = json
+              })
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

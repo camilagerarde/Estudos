@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Exercícios aula - 02/05</title>
+  </head>
+  <body>
+    <!--
+      Utilizando API
+      Adicione um evento de clique a cada <a> do html e previna o comportamento padrão.
+      Faça o fetch dos dados do href ao click e mostre na interface dois dos dados
+    -->
+
+    <div id="app">
+      <ul>
+        <li><a @click.prevent="getApi" href="https://swapi.dev/api/planets/1/">Planeta 01</a></li>
+        <li><a @click.prevent="getApi" href="https://swapi.dev/api/planets/2/">Planeta 02</a></li>
+        <li><a @click.prevent="getApi" href="https://swapi.dev/api/planets/3/">Planeta 03</a></li>
+        <li><a @click.prevent="getApi" href="https://swapi.dev/api/planets/4/">Planeta 04</a></li>
+        <li><a @click.prevent="getApi" href="https://swapi.dev/api/planets/5/">Planeta 05</a></li>
+      </ul>
+      <p>Nome: {{api.name}} - População: {{api.population}}</p>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          api: {},
+        },
+        methods: {
+          getApi(event) {
+            const url = event.currentTarget.href
+            fetch(url)
+              .then((resp) => resp.json())
+              .then((json) => {
+                this.api = json
+              })
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
