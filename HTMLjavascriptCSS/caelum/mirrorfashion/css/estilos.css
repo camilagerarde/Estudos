@@ -1,0 +1,97 @@
+body {
+  color: #333333;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+header {
+  position: relative;
+}
+
+/* centralização do conteudo */
+.container {
+  margin: 0 auto;
+  width: 940px;
+}
+
+.sacola {
+  /* logo da sacola */
+  background-image: url(../img/sacola.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+
+    font-size: 14px;
+    padding-right: 35px;
+    text-align: right;
+    width: 140px;
+
+/* posicionamento */
+position: absolute;
+top: 0;
+right: 0;
+}
+
+.menu-opcoes {
+  /* posicionamento */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  list-style-type: none;
+}
+
+.menu-opcoes ul {
+  font-size: 15px;
+}
+
+.menu-opcoes a {
+  color: #003366;
+}
+
+.menu-opcoes ul li {
+  /* lista em linha horizontal */
+  display: inline;
+  margin-left: 20px;
+}
+
+.busca,
+.menu-departamentos {
+  background-color: #DCDCDC;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-right: 1-px;
+  width: 230px;
+
+  float: left;
+}
+
+.busca h2,
+.busca form,
+.menu-departamentos h2 {
+  margin: 10px;
+}
+
+.menu-departamentos li {
+  background-color: white;
+
+  margin-bottom: 1px;
+  
+  padding: 5px 10px;
+}
+
+.menu-departamentos a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.busca input[type=search] {
+  width: 170px;
+}
+
+.menu-departamentos {
+  clear: left;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.destaque {
+  margin-top: 10px;
+}
