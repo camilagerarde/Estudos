@@ -1,0 +1,13 @@
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\bin\Debug\netcoreapp3.1\Revisao.exe
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\bin\Debug\netcoreapp3.1\Revisao.deps.json
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\bin\Debug\netcoreapp3.1\Revisao.runtimeconfig.json
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\bin\Debug\netcoreapp3.1\Revisao.runtimeconfig.dev.json
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\bin\Debug\netcoreapp3.1\Revisao.dll
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\bin\Debug\netcoreapp3.1\Revisao.pdb
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\obj\Debug\netcoreapp3.1\Revisao.csprojAssemblyReference.cache
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\obj\Debug\netcoreapp3.1\Revisao.AssemblyInfoInputs.cache
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\obj\Debug\netcoreapp3.1\Revisao.AssemblyInfo.cs
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\obj\Debug\netcoreapp3.1\Revisao.csproj.CoreCompileInputs.cache
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\obj\Debug\netcoreapp3.1\Revisao.dll
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\obj\Debug\netcoreapp3.1\Revisao.pdb
+C:\Users\camilag\Desktop\Camila\estudo\dotnet\Revisao\obj\Debug\netcoreapp3.1\Revisao.genruntimeconfig.cache

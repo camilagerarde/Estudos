@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\camilag\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\camilag\\.nuget\\packages"
+    ]
+  }
+}
