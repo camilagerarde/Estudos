@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="./vue.js"></script>
+    <title>Diretivas</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{title}}</h1>
+      <div v-show="condition" :style="{background: colorSelect}">
+        <p>{{info}}</p>
+        <input v-model="colorSelect" type="color" />
+        {{colorSelect}}
+      </div>
+      <a :href="href">{{href}}</a>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          title: 'Curso de Vue.js',
+          info: 'Esse é o conteúdo',
+          condition: true,
+          href: 'https://www.exemplo.com',
+          colorSelect: '#000',
+        },
+      })
+    </script>
+  </body>
+</html>

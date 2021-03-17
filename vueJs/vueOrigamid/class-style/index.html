@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p :class="cor">Texto Azul</p>
+      <!-- Podemos passar objetos no :class, a propriedade que tiver valor true será adicionada como classe. -->
+      <p :class="{ ativo: estaAtivo }">Texto Ativo</p>
+      <button @click="estaAtivo = !estaAtivo">Ativar / Desativar</button>
+      <!-- Array's devem ser utilizadas quando precisamos passar mais de um classe. -->
+      <p :class="[background, cor]">Texto Ativo</p>
+
+      <!-- :style
+      É possível passar um objeto com os estilos, quase como fazemos com CSS direto. 
+      Utilizar camelCase, invés de font-size use fontSize, para usar font-size, teria que ser entre aspas. -->
+      <p :style="{background: bgColor, color: textColor, fontSize: tamanho + 'px'}">Texto Ativo</p>
+      <button @click="tamanho++">Aumentar texto</button> <br />
+      <!-- :style e objetos -->
+      <p :style="estiloBotao">Estilo no objeto</p>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          cor: 'azul',
+          estaAtivo: false,
+          background: 'pink',
+          bgColor: 'tomato',
+          textColor: '#fff',
+          tamanho: 20,
+          estiloBotao: {
+            background: 'darkblue',
+            color: '#fff',
+            fontSize: '20px',
+            border: 'dotted black 10px',
+          },
+        },
+      })
+    </script>
+
+    <style>
+      .azul {
+        color: blue;
+      }
+      .ativo {
+        display: none;
+      }
+      .pink {
+        background: hotpink;
+      }
+    </style>
+  </body>
+</html>

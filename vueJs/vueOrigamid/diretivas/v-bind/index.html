@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>v-bind</title>
+  </head>
+  <body>
+    <!-- O v-bind é uma diretiva que permite a utilização de expressões dentro de atributos html. 
+    O uso de dois pontos :href na frente de um atributo html, é a mesma coisa que utilizarmos o v-bind:href
+    -->
+    <div id="app">
+      <a :href="url">link</a>
+      <!-- É possível utilizar os atributos normais junto com as diretivas. 
+        Se o atributo permitir apenas um valor, o último será o utilizado. -->
+      <a :href="link" href="https://www.origamid.com">Link Google</a>
+      <p v-bind:class="color" class="nova">texto</p>
+      <p :class="comprou ? color : 'vermelho'">Comprou</p>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          url: 'https://www.google.com/',
+          color: 'azul',
+          comprou: true,
+        },
+      })
+    </script>
+  </body>
+</html>

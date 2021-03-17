@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>v-model</title>
+  </head>
+  <body>
+    <!-- V-MODEL - É utilizado para tornar reativo o conteúdo de formulários. 
+      Chamado de two-way data binding. 
+      Por padrão todo o conteúdo do Vue.js é one-way, 
+      isso significa que mudança no JavaScript criam mudanças no DOM. 
+      Já no two-way, tanto mudanças no dom como no JavaScript, mudam o conteúdo.
+    MODIFIERS
+      Com o .lazy, a reatividade só acontecendo ao change (quando o usuário muda de campo). 
+      O .number irá automaticamente transformar o input em número e não string. 
+      O .trim automaticamente elimina espaços em branco.-->
+    <div id="app">
+      <input placeholder="Insira seu nome" v-model.lazy="name" /> <br>
+      <textarea placeholder="Insira a mensagem" v-model="message"></textarea> <br>
+      <input placeholder="Insira sua idade" v-model.number="age" /> <br>
+      <input placeholder="Insira seu email" v-model.trim="email" />
+      <input type="checkbox" v-model="terms" id="terms"/>
+      <label for="terms">Termos e Condições</label>
+      <p>Nome: {{name}}</p>
+      <p>Mensagem: {{message}}</p>
+      <p>Idade: {{age}}</p>
+      <p>Email: {{email}}</p>
+      <p>Termos: {{terms}}</p>
+      <input type="radio" v-model="color" value="Azul" id="blue" />
+      <label for="blue">Azul</label><br />
+      <input type="radio" v-model="color" value="Vermelho" id="red" />
+      <label for="red">Vermelho</label>
+      <p>Cor: {{color}}</p>
+
+      <!-- SELECT - É importante colocar uma opção inicial desabilitada com valor vazio, 
+      para resolver um bug no IOS. -->
+      <select v-model="fruit">
+        <option disabled value="">Selecione uma fruta</option>
+        <option value="banana">Banana</option>
+        <option value="morango">Morango</option>
+        <option value="uva">Uva</option>
+      </select>
+      <p>Fruta: {{fruit}}</p>
+    </div>      
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          name: '',
+          message: '',
+          terms:'',
+          color: '',
+          fruit: '',
+          age: 0,
+          email: ''
+        },
+      })
+    </script>
+  </body>
+</html>

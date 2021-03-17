@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>v-if e v-show</title>
+  </head>
+  <body>
+    <!-- O v-if é uma diretiva que permite utilizarmos condicionais para mostrar ou não um elemento. 
+      - Podemos utilizar também o v-else que deve vir logo após o if para funcionar. 
+      - O v-else-if também existe.
+      - Podemos agrupar um conteúdo com a tag <template>
+
+      O v-if remove o elemento, v-show apenas adicionar o display: none;. 
+      v-show é preferido se você for mudar constantemente o estado, por ser mais rápido.
+      -->
+    <div id="app">
+      <template v-if="logged">
+        <p>Você está logado.</p>
+        <button @click="logged = false">Deslogar</button>
+      </template>
+      <template v-else>
+        <p>Você não está logado.</p>
+        <button @click="logged = true">Logar</button>
+      </template>
+
+      <p v-if="number === 1">Usuário 01</p>
+      <p v-else-if="number === 2">Usuário 02</p>
+      <p v-else>Usuário não identificado</p>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          logged: false,
+          number: 1,
+        },
+      })
+    </script>
+  </body>
+</html>

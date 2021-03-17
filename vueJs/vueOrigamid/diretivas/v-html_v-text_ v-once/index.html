@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>v-html, v-text e v-once</title>
+  </head>
+  <body>
+    <!-- v-html - Renderiza conteúdo html dentro de uma tag. Modifica o innerHtml do elemento. -->
+    <div id="app">
+      <!-- colocar numa tag neutra div, span -->
+      <div v-html="link"></div>
+      <div>{{link}}</div>
+      <hr />
+
+      <!-- v-text - Renderiza texto dentro de uma tag.
+        não renderiza mais conteúdo dentro da tag-->
+      <div v-text="fruit">custa R$ 2.00</div>
+      <div>{{fruit}} custa R$ 2.00</div>
+      <hr />
+
+      <!-- v-once - Renderiza uma única vez o conteúdo e não torna ele reativo. -->
+      <p v-once>Valor inicial: R$ {{total}}</p>
+      <button @click="build += 5">Comprar Banana R$ 5</button>
+      <p>Gasto: R$ {{build}}</p>
+      <p>Saldo: R$ {{total - build}}</p>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          link: "<a href='https://www.origamid.com'>Origamid</a>",
+          fruit: 'Banana',
+          total: 150,
+          build: 0,
+        },
+      })
+    </script>
+  </body>
+</html>

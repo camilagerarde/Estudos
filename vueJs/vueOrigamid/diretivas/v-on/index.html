@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>V-on</title>
+  </head>
+  <body>
+    <!-- O v-on é uma diretiva que permite observarmos eventos nas tags.
+    O uso do arroba @click na frente do evento, é a mesma coisa que utilizarmos o v-on:click.
+
+      Modificadores
+    Algumas diretivas possuem modificadores. Estes são utilizados através do .. 
+    No caso de eventos, event.preventDefault() pode ser adicionar com o @click.prevent. 
+    -->
+
+    <div id="app">
+      <button v-on:click="handleClick">Clique</button> <br />
+      <button @click="active = !active">Ativar</button> {{active}} <br />
+      <a @click.prevent="scroll" href="#interno">Prevent</a>
+      <div @mousemove="handleMouse">Mouse X: {{mouse.x}}</div>
+      <input @keyup="handleKey" type="text" />
+
+      <label for="any">Qualquer tecla</label>
+      <input id="any" @keyup="activate" />
+      <label for="enter">Enter</label>
+      <input id="enter" @keyup.enter="activate" />
+      <label for="esc">ESC</label>
+      <input id="esc" @keyup.esc="activate" />
+      <label for="up">Up</label>
+      <input id="up" @keyup.up="activate" />
+
+      <p @click="activate">Clique</p>
+      <p @click.right="activate">Clique ESQUERDO</p>
+      <p @click.middle="activate">Clique MEIO</p>
+
+      <p style="position: fixed;">{{totalScroll}} Scroll Y</p>
+    </div>
+    <style>
+      body {
+        height: 2000px;
+      }
+      label {
+        display: block;
+      }
+      input {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          active: true,
+          mouse: '',
+          totalScroll: 0
+        },
+        methods: {
+          handleClick(event) {
+            console.log(event)
+          },
+          scroll() {
+            console.log('Scroll Suave')
+          },
+          handleKey(event) {
+            console.log(event.key)
+          },
+          handleMouse(event) {
+            this.mouse = event
+          },
+          activate(event) {
+            event.currentTarget.style.border = '4px solid blue';
+          },
+          handleScroll() {
+            this.totalScroll = window.scrollY;
+          },
+        },
+        created() {
+          window.addEventListener('scroll', this.handleScroll);
+        } 
+      })
+    </script>
+  </body>
+</html>

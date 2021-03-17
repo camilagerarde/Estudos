@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>computed</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{total}}</p>
+
+      <p v-for="car in blueCars">{{car.automaker}}</p>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          price: 59,
+          discount: 10,
+          cars: [
+            {
+              automaker: 'VW',
+              color: 'Azul',
+            },
+            {
+              automaker: 'Ford',
+              color: 'Preto',
+            },
+            {
+              automaker: 'Tesla',
+              color: 'Azul',
+            },
+          ],
+        },
+        computed: {
+          total() {
+            return 'R$ ' + (this.price - this.discount)
+          },
+          blueCars() {
+            return this.cars.filter(({ color }) => color === 'Azul')
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>v-for</title>
+  </head>
+  <body>
+    <!-- v-for - Renderiza uma lista de itens. 
+      Assim como o for loop, ele irá executar para cada item da array/objeto. -->
+    <div id="app">
+      <ul>
+        <li v-for="(fruit, index) in colors">{{index + 1}} - {{fruit}}</li>
+      </ul>
+      <hr />
+      <div v-for="state in country">
+        <p>{{state.name}}</p>
+        <p>{{state.population}}</p>
+      </div>
+      <hr />
+      <div v-for="({name, population}) in country">
+        <p>{{name}}</p>
+        <p>{{population}}</p>
+      </div>
+      <hr />
+
+      <!-- v-for parâmetros - Para arrays você pode utilizar o valor e o index de cada item. 
+        Para objetos é possível utilizar, valor, chave e index. -->
+      <div v-for="(value, index) in list">
+        <p>{{index}}: {{value}}</p>
+      </div>
+      <button @click="removeItem">Remover</button>
+      <button @click="changeItem">Mudar</button>
+      <hr />
+      <div v-for="(value, key, index) in watermelon">
+        <p>{{index}} {{key}}: {{value}}</p>
+      </div>
+      <hr />
+
+      <!-- :key - Cria uma identificação única para o item. Sem o key, 
+        bugs podem ocorrer principalmente em componentes mais complexos. -->
+      <div v-for="fruta in frutas" :key="fruta.id">
+        <p>{{fruta.nome}}</p>
+        <p>{{fruta.cor}}</p>
+      </div>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          colors: ['azul', 'amarelo', 'roxo', 'laranja', 'verde'],
+          country: {
+            sp: {
+              population: '45 milhões',
+              name: 'São Paulo',
+            },
+            mg: {
+              population: '21 milhões',
+              name: 'Minas Gerais',
+            },
+            rj: {
+              population: '17 milhões',
+              name: 'Rio de Janeiro',
+            },
+          },
+          list: ['Item 1', 'Item 2', 'Item 3'],
+          watermelon: {
+            color: 'Verde',
+            weight: '10kg',
+            price: 'R$ 15',
+          },
+          frutas: [
+            {
+              id: 'banana-1',
+              nome: 'Banana',
+              cor: 'Amarela',
+            },
+            {
+              id: 'melancia-1',
+              nome: 'Melancia',
+              cor: 'Verde',
+            },
+          ],
+        },
+        methods: {
+          //Modificar diretamente o valor de uma array, não irá ativar a reatividade do Vue.
+          removeItem() {
+            this.list.pop() // Ativa reatividade
+          },
+          changeItem() {
+            // this.list[0] = 'Banana' // Não ativa reatividade
+            this.$set(this.list, 0, 'banana') // Ativa reatividade
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
