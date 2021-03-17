@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>Reatividade</title>
+  </head>
+  <body>
+    <!-- com vue.js -->
+    <div id="app">
+      <p>Camisas vue - R$ {{price}}</p>
+      <button @click="total++">Adicionar</button>
+      <button @click="total--">Remover</button>
+      <span>{{total}}</span>
+      <p>Total: R$ {{total * price}}</p>
+      <p>{{total > 0 ? "Continue adicionando itens" : "Adicione uma peça!"}}</p>
+    </div>
+    <hr />
+
+    <!-- com javascript puro -->
+    <div>
+      <p>Camisas js - R$ <span class="price"></span></p>
+      <button class="increase">Adicionar</button>
+      <button class="decrease">Remover</button>
+      <span class="total"></span>
+      <p>Total: R$ <span class="totalPrice"></span></p>
+      <p class="info"></p>
+    </div>
+
+    <script>
+      //vue,js
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          price: 30,
+          total: 0,
+        },
+      })
+
+      //javaScript
+      const datajs = {
+        price: 40,
+        total: 0,
+      }
+
+      const priceJs = document.querySelector('.price')
+      const totalJs = document.querySelector('.total')
+      const totalPriceJs = document.querySelector('.totalPrice')
+      const infoJs = document.querySelector('.info')
+      document.querySelector('.increase').addEventListener('click', increase)
+      document.querySelector('.decrease').addEventListener('click', decrease)
+
+      priceJs.innerText = datajs.price
+      totalJs.innerText = datajs.total
+      infoJs.innerText = 'Adicione uma peça!'
+      totalPriceJs.innerText = datajs.price * datajs.total
+
+      function increase() {
+        datajs.total++
+        refreshUI()
+      }
+      function decrease() {
+        datajs.total--
+        refreshUI()
+      }
+      function refreshUI() {
+        totalJs.innerText = datajs.total
+        totalPriceJs.innerText = datajs.price * datajs.total
+        datajs.total > 0 ? (infoJs.innerText = 'Continue adicionando itens') : (infoJs.innerText = 'Adicione uma peça!')
+      }
+    </script>
+  </body>
+</html>

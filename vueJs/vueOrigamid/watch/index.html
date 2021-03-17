@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./vue.js"></script>
+    <title>watch</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{count}}</p>
+      <button @click="count++">Adicionar</button>
+      <hr />
+
+      <!-- watch assincrono 
+      O watch se diferencia do computed principalmente pela sua capacidade de receber eventos assincronos. -->
+      <input type="text" v-model="cep" placeholder="Cep" maxlength="8" />
+      <ul>
+        <li v-for="(value, key) in adress">{{key}}: {{value}}</li>
+      </ul>
+    </div>
+
+    <div id="app"></div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          count: 0,
+          cep: '',
+          adress: {},
+        },
+        watch: {
+          count(novo, antigo) {
+            alert(novo)
+            console.log(antigo)
+          },
+          cep(value) {
+            if (value.length === 8) {
+              fetch(`https://viacep.com.br/ws/${value}/json/`)
+                .then((resp) => resp.json())
+                .then((json) => {
+                  this.adress = json
+                })
+            }
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
