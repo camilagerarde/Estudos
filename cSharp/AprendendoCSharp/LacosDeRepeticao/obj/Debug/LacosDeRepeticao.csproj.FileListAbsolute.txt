@@ -1,0 +1,7 @@
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\LacosDeRepeticao\bin\Debug\LacosDeRepeticao.exe.config
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\LacosDeRepeticao\bin\Debug\LacosDeRepeticao.exe
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\LacosDeRepeticao\bin\Debug\LacosDeRepeticao.pdb
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\LacosDeRepeticao\obj\Debug\LacosDeRepeticao.csprojAssemblyReference.cache
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\LacosDeRepeticao\obj\Debug\LacosDeRepeticao.csproj.CoreCompileInputs.cache
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\LacosDeRepeticao\obj\Debug\LacosDeRepeticao.exe
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\LacosDeRepeticao\obj\Debug\LacosDeRepeticao.pdb

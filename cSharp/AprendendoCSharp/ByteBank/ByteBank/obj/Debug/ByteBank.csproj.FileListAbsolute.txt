@@ -1,0 +1,7 @@
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\ByteBank\ByteBank\bin\Debug\ByteBank.exe.config
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\ByteBank\ByteBank\bin\Debug\ByteBank.exe
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\ByteBank\ByteBank\bin\Debug\ByteBank.pdb
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\ByteBank\ByteBank\obj\Debug\ByteBank.csprojAssemblyReference.cache
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\ByteBank\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\ByteBank\ByteBank\obj\Debug\ByteBank.exe
+C:\Users\camilag\Desktop\Camila\estudo\AprendendoCSharp\ByteBank\ByteBank\obj\Debug\ByteBank.pdb
